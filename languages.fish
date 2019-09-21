@@ -22,11 +22,10 @@ end
 function install_nvm
     git clone https://github.com/nvm-sh/nvm.git ~/.nvm
     omf install bass
-    cat <<EOT >> ~/.config/fish/functions/nvm.fish
+    echo >> ~/.config/fish/functions/nvm.fish "\
     function nvm
 	    bass source ~/.nvm/nvm.sh --no-use ';' nvm $argv;
-    end
-    EOT
+    end"
 end
 
 function setup_node
