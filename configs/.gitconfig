@@ -3,25 +3,19 @@
 # Please adapt and uncomment the following lines:
 	name = Bony Roopchandani
 	email = bonyroopchandani@gmail.com
-[merge]
-	tool = meld
-[mergetool "diffmerge"]
-	cmd = diffmerge --merge --result=$MERGED $LOCAL $BASE $REMOTE
-	trustExitCode = true
-[mergetool]
-	keepBackup = false
-	prompt = false
-[diff]
-	tool = meld
-[difftool "diffmerge"]
-	cmd = diffmerge $LOCAL $REMOTE
-[difftool]
-	prompt = false
 [core]
 	excludesfile = ~/.gitignore_global
-[difftool "sourcetree"]
-	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path = 
-[mergetool "sourcetree"]
-	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+[merge]
+	tool = meld
+[mergetool]
+	prompt = false
+[mergetool "meld"]
 	trustExitCode = true
+	cmd = open -W -a Meld --args --auto-merge \"$PWD/$LOCAL\" \"$PWD/$BASE\" \"$PWD/$REMOTE\" --output=\"$PWD/$MERGED\"
+[diff]
+	tool = meld
+[difftool]
+	prompt = false
+[difftool "meld"]
+	trustExitCode = true
+	cmd = open -W -a Meld --args \"$LOCAL\" \"$PWD/$REMOTE\"

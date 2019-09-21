@@ -8,6 +8,7 @@ cask "sublime-text"
 cask "visual-studio-code"
 
 # Browsers
+cask "brave-browser"
 cask "google-chrome"
 cask "firefox"
 cask "torbrowser"
@@ -24,7 +25,6 @@ cask "skype"
 cask "gpgtools"
 cask "utorrent"
 cask "meld"
-cask "diffmerge"
 cask "postman"
 cask "the-unarchiver"
 cask "tunnelbear"
@@ -33,9 +33,9 @@ cask "tunnelbear"
 brew "fish"
 
 # Languages
-brew "go"
-brew "python3"
-brew "node"
+brew "pyenv"
+brew "goenv"
+brew "rbenv"
 
 # Tools
 brew "curl"
